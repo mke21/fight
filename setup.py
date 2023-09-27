@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     description="""Vechtspel met Tygo""",
     install_requires=[
-            "pygame==2.5.1"
+            "pygame==2.5.2"
     ],
     entry_points={
         'console_scripts': [
