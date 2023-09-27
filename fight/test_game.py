@@ -1,9 +1,6 @@
 import unittest
 from .game import init_game, quit_game
 
-# please make a test for the game.py and main.py
-# you can use the test_run.py as a template
-
 
 class TestGame(unittest.TestCase):
     def setUp(self):
