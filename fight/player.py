@@ -1,29 +1,32 @@
-import pygame 
+import pygame
 
-class Player1():
-    
-    def image(x,y):
-        Player1 = pygame.image.load("assets/Player1F.png")
-        Player1.rect = pygame.get_rect
+# TODO: errors fixen
 
-    def move():
+
+class Player:
+
+    def __init__(self, x: int, y: int, image_name: str = "Player1F"):
+        self.x = x
+        self.y = y
+        self._image = pygame.image.load(f"assets/{image_name}.png")
+        self.rect = pygame.get_rect
+
+    def move(self):
         keys = pygame.key.get_pressed()
-        if keys[K_a]:
-            Player1.x + 10
-        
-        if keys[K_d]:
-            Player1.x - 10
-        
+        if keys[pygame.K_a]:
+            self.x += 10
+
+        if keys[pygame.K_d]:
+            self.x -= 10
+
+        # waar komt jump vandaam?
         if jump is False and keys[pygame.K_SPACE]:
             jump = True
 
+        # wat is vel en jump?
         if jump is True:
-            Player1.y -= vel * 4
+            self.y -= vel * 4
             vel -= 1
             if vel < -10:
                 jump = False
                 vel = 10
-
-        
-
-
