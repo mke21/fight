@@ -6,7 +6,7 @@ import pygame as pg
 from pygame.surface import SurfaceType
 from .settings import RES, FPS, CAPTION
 
-
+BACKGROUND = pg.image.load('assets/Night-level.png')
 pg.display.set_caption(CAPTION)
 
 
@@ -41,6 +41,7 @@ class Game:
 def init_game(res: tuple[int, int] | None = None) -> Game:
     pg.init()
     screen = pg.display.set_mode(res or RES)  # if res not set, use RES
+    screen.blit(BACKGROUND, (0, 0))
     clock = pg.time.Clock()
     return Game(screen=screen, clock=clock)
 
