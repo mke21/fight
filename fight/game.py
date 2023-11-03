@@ -23,7 +23,7 @@ class Game:
     def _check_running(self) -> None:
         """Check if the game is running"""
         for event in pg.event.get():
-            if event.type == pg.QUIT:
+            if event.type == pg.QUIT or (event.type == pg.KEYDOWN and event.key == pg.K_ESCAPE):
                 self.quit()
 
     def _update(self) -> None:
